@@ -1,0 +1,127 @@
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+/* Animated Gradient Background Globs */
+.gradient-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+  opacity: 0.5;
+  animation: float 10s infinite ease-in-out alternate;
+}
+
+.shape-1 {
+  width: 400px;
+  height: 400px;
+  background: var(--primary-color);
+  top: -100px;
+  left: -100px;
+}
+
+.shape-2 {
+  width: 300px;
+  height: 300px;
+  background: var(--accent-color);
+  bottom: -50px;
+  right: -50px;
+  animation-delay: -3s;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 650px;
+  text-align: center;
+  animation: fade-in-up 1s ease-out forwards;
+}
+
+.profile-container {
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-image-wrapper {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  animation: pulse-glow 3s infinite alternate;
+  margin-bottom: 1.5rem;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--bg-secondary);
+}
+
+.hero-name {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #ffffff, #a5b4fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-titles {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.hero-summary {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.floating-container {
+  position: absolute;
+  top: 0;
+  width: 32%;
+  height: 100%;
+  pointer-events: none; /* Allows pressing through the container wrapper */
+  z-index: 5;
+}
+
+.scattered-logo-wrapper {
+  pointer-events: auto; /* Restores interactivity to the logos themselves */
+  will-change: transform;
+}
+
+.floating-container.left { 
+  left: 0; 
+}
+
+.floating-container.right { 
+  right: 0; 
+}
+
+@media (max-width: 1024px) {
+  .floating-container { display: none; }
+}
+
+@media (max-width: 600px) {
+  .hero-name { font-size: 2.5rem; }
+  .profile-image-wrapper { width: 160px; height: 160px; }
+}
